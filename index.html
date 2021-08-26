@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+		content="Full page images slider & random selection with lots of options to choose from to make your idea or preview your project">
+	<title>Photo Viewer</title>
+	<link rel="icon" href="img/icon.png">
+	<link rel="stylesheet" href="css/all.css">
+	<link rel="stylesheet" href="css/main.css">
+	<link
+		href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+</head>
+
+<!--
+		** Idea By: Kirolos Mahfouz
+		** Designed By: Kirolos Mahfouz
+		** Frontend By: Kirolos Mahfouz
+-->
+<!-- 
+
+	Version 2:
+		- Add Question Mark To Every Setting next to setting header to explain what this settings do & hide it when the user choose to turn off help
+		- Need Some Maintance In Preformance
+		- Colors [
+			- Colors [ U Can Add Check box If Checked Convert hex code to rgba and add percent by user chosse ]
+			- Buttons Text Color
+		]
+		- Guide [
+			- Make Guide As A Slider
+			- Make Two Buttons In Guide [
+				First: Close & Open Again
+				Second: Close Forever & Save In Local Storage
+			]
+		]
+		- loading screen [
+			- Loading Change Some Photos Fast And Slow And Progress Bar Or Loading Circle
+			- progress bar after images
+			- some imformation about the site
+			- confirm button when progress bar complete
+			- notes for how to use this website [
+				- like controls & shortcut keys
+			]
+		]
+		- Overscroll [
+			- Idea [
+				- Add Padding To The Slider From Top & Button
+				- When Scroll To Far Top Or Bottom Padding Add & Remove In Specific Time
+			] 
+		]
+		- Swipes [
+			- Swipe Left ( One Finger ): Next Slide
+			- Swipe Right ( One Finger ): Previous Slide
+			- Swipe Left ( Two Finger ): Last Slide
+			- Swipe Right ( Two Finger ): First Slide
+			- Swipe Left ( From Far Right ): Open Gallery
+			- Swipe Right ( From Far Left ): Open Settings
+			- Swipe Up ( One Finger ): Start Random
+			- Swipe Down ( One Finger ): Stop Random
+		]
+		- Change Right Click Menu
+		- Download Images & Backup Images For View
+		- Make Website As A Social Media [
+			- Add profile for users to add there slides & click on 3 dots to change settings
+			- menu in the left to show profile settings
+			- every user can share slides from another user
+		]
+-->
+
+<body>
+
+	<div class="slider">
+
+		<!-- Start Slider Guide -->
+
+		<div class="guide">
+			<h1>Photo Viewer</h1>
+			<div class="what">
+				<h3>What's photo viewer?</h3>
+				<p>
+					Photo Viewer is a site that allows you to display a group of pictures in two different forms ( Fade
+					-
+					Slide) so that you can share them with your friends, and the site gives you a set of settings to
+					control
+					the way pictures are displayed and the time period for displaying each image and a group of other
+					settings that we will explain how to use them below.
+				</p>
+			</div>
+			<div class="how">
+				<h3>How to use photo viewer?</h3>
+				<div class="guide-text">
+					<h4>If you want to go to the Next image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Next button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Right arrow <i class="fas fa-chevron-right"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Previous image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Previous button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Left arrow <i class="fas fa-chevron-left"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Last image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Last button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Down arrow <i class="fas fa-chevron-down"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to go to the Last image, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Last button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the Up arrow <i class="fas fa-chevron-up"></i> on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to toggle between [ On / Off ] Random Images, you can use one of these two
+						methods:
+					</h4>
+					<div class="methods">
+						<p>Click the Random button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">Enter</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to view Images without any thing, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click on the image</p>
+						<p>Click on the <span class="key">F</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to open Gallery, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Gallery button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">G</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to open Settings, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the Settings button that appears in the control panel in the bottom of the page</p>
+						<p>Click on the <span class="key">S</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to reset all Settings, you can use one of these two methods:</h4>
+					<div class="methods">
+						<p>Click the reset button that appears in the Settings Box in the top of the page</p>
+						<p>Click on the <span class="key">R</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to close any open thing like [ Gallery - Settings - Guide ], you can use this method:</h4>
+					<div class="methods">
+						<p>Click on the <span class="key">Esc</span> Key on the keyboard</p>
+					</div>
+				</div>
+				<div class="guide-text">
+					<h4>If you want to toggle Guide, you can use this method:</h4>
+					<div class="methods">
+						<p>Click on the <span class="key">H</span> Key on the keyboard</p>
+					</div>
+				</div>
+			</div>
+			<div class="close-guid">
+				<button id="close">Close</button>
+			</div>
+		</div>
+
+		<!-- End Slider Guide -->
+		<!-- Start Slider Settings -->
+
+		<div class="s-settings">
+			<header>
+				<h2>Settings</h2>
+				<div class="buttons">
+					<button id="resetSettingsBtn">Reset</button>
+					<button id="closeSettingsBtn">Close</button>
+				</div>
+			</header>
+			<div class="settings-cont" id="my-scrollbar">
+				<div class="colors-options options">
+					<h3 class="settings-header">Colors option</h3>
+					<div class="bg-color-option">
+						<h4 class="settings-sub-header">Background color</h4>
+						<div class="colors options-choice">
+							<div data-color="rgba(18, 18, 18, 0.9)" class="black active"></div>
+							<div data-color="rgba(34, 34, 34, 0.815)" class="black-light"></div>
+							<div data-color="rgba(47, 54, 64, 0.815)" class="grey"></div>
+							<div data-color="rgba(219, 220, 225, 0.715)" class="white-dark"></div>
+							<div data-color="rgba(245, 246, 250, 0.815)" class="white"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+					<div class="fg-color-option">
+						<h4 class="settings-sub-header">Forground color</h4>
+						<div class="colors options-choice">
+							<div data-color="#121212" class="black"></div>
+							<div data-color="#333" class="black-light"></div>
+							<div data-color="#555" class="grey"></div>
+							<div data-color="#fff" class="white active"></div>
+							<div data-color="#ddd" class="white-dark"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+					<div class="main-color-option">
+						<h4 class="settings-sub-header">Main color</h4>
+						<div class="colors options-choice">
+							<div data-color="#651fff" class="blue"></div>
+							<div data-color="#1e88e5" class="blue-light active"></div>
+							<div data-color="#f50057" class="red"></div>
+							<div data-color="#ff3d00" class="orange"></div>
+							<div data-color="#00c853" class="green"></div>
+							<div class="custome">
+								<i class="fas fa-paint-brush"></i>
+								<input type="color">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="slider-options options">
+					<h3 class="settings-header">Slider option</h3>
+					<div class="save-option">
+						<h4 class="settings-sub-header">Save local</h4>
+						<div class="state options-choice">
+							<div class="on active">On</div>
+							<div class="off">Off</div>
+						</div>
+					</div>
+					<div class="help-option">
+						<h4 class="settings-sub-header">Help</h4>
+						<div class="state options-choice">
+							<div class="on active">On</div>
+							<div class="off">Off</div>
+						</div>
+					</div>
+					<div class="random-option">
+						<h4 class="settings-sub-header">Random images</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="repeat-option">
+						<h4 class="settings-sub-header">Repeat images</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="full-view-option">
+						<h4 class="settings-sub-header">Full view</h4>
+						<div class="state options-choice">
+							<div class="on">On</div>
+							<div class="off active">Off</div>
+						</div>
+					</div>
+					<div class="style-option">
+						<h4 class="settings-sub-header">Slider style</h4>
+						<div class="state options-choice">
+							<div class="fade active">Fade</div>
+							<div class="slide">Slide</div>
+						</div>
+					</div>
+				</div>
+				<div class="timing-options options">
+					<h3 class="settings-header">Timing option</h3>
+					<div class="random-time-option">
+						<h4 class="settings-sub-header">Random time</h4>
+						<div class="times options-choice">
+							<div data-time="2000">2s</div>
+							<div data-time="3000">3s</div>
+							<div data-time="4000">4s</div>
+							<div data-time="5000" class="active">5s</div>
+							<div data-time="6000">6s</div>
+							<div data-time="7000">7s</div>
+							<div data-time="8000">8s</div>
+							<div data-time="9000">9s</div>
+							<div data-time="10000">10s</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- End Slider Settings -->
+		<!-- Start Slider Imgs -->
+
+		<div class="s-imgs fade" data-repeat="no">
+			<img src="img/01.jpg" alt="Image 1">
+			<img src="img/02.jpg" alt="Image 2">
+			<img src="img/03.jpg" alt="Image 3">
+			<img src="img/04.jpg" alt="Image 4">
+			<img src="img/05.jpg" alt="Image 5">
+			<img src="img/06.jpg" alt="Image 6">
+			<img src="img/07.jfif" alt="Image 7">
+			<img src="img/08.jpg" alt="Image 8">
+			<img src="img/09.jpg" alt="Image 9">
+			<img src="img/10.jpg" alt="Image 10">
+		</div>
+
+		<!-- End Slider Imgs -->
+		<!-- Start Slider Gallery -->
+
+		<div class="gallery">
+			<img src="img/01.jpg" alt="Image 1" data-number="0">
+			<img src="img/02.jpg" alt="Image 2" data-number="1">
+			<img src="img/03.jpg" alt="Image 3" data-number="2">
+			<img src="img/04.jpg" alt="Image 4" data-number="3">
+			<img src="img/05.jpg" alt="Image 5" data-number="4">
+			<img src="img/06.jpg" alt="Image 6" data-number="5">
+			<img src="img/07.jfif" alt="Image 7" data-number="6">
+			<img src="img/08.jpg" alt="Image 8" data-number="7">
+			<img src="img/09.jpg" alt="Image 9" data-number="8">
+			<img src="img/10.jpg" alt="Image 10" data-number="9">
+		</div>
+
+		<!-- End Slider Gallery -->
+		<!-- Start Slider Controls -->
+
+		<div class="s-controls help">
+			<div id="settingsBtn"><i class="fas fa-sliders-h"></i></div>
+			<div id="firstBtn"><i class="fas fa-angle-double-left"></i></div>
+			<div id="prevBtn"><i class="fas fa-angle-left"></i></div>
+			<div id="randomBtn"><i class="fas fa-play"></i></div>
+			<div id="nextBtn"><i class="fas fa-angle-right"></i></div>
+			<div id="lastBtn"><i class="fas fa-angle-double-right"></i></div>
+			<div id="galleryBtn"><i class="far fa-images"></i></div>
+		</div>
+
+		<!-- End Slider Controls -->
+	</div>
+
+<!--
+		** Idea By: Kirolos Mahfouz
+		** Designed By: Kirolos Mahfouz
+		** Frontend By: Kirolos Mahfouz
+-->
+
+	<script src="js/smooth-scrollbar.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

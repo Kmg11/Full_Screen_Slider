@@ -1,0 +1,607 @@
+/*
+** Idea By: Kirolos Mahfouz
+** Designed By: Kirolos Mahfouz
+** Frontend By: Kirolos Mahfouz
+*/
+
+/* Start Main Settings */
+
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body {font-family: "Poppins", sans-serif;}
+
+:root {
+	--main-color: #1976d2;
+	--bg-color: rgba(18, 18, 18, 0.9);
+	--fg-color: #fff;
+	--white-color: #fff;
+	--main-transition: all 0.5s linear;
+	--sub-transition: all 0.3s ease-out;
+}
+
+.scrollbar-thumb {
+	background: var(--main-color) !important;
+}
+
+.scrollbar-track {
+	background-color: transparent !important;
+}
+
+::-webkit-scrollbar {
+	background-color: transparent !important;
+	width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: var(--main-color) !important;
+}
+
+/* End Main Settings */
+/* Start Guide */
+
+.guide {
+	position: fixed !important;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	padding: 30px 50px 0;
+	background-color: var(--bg-color);
+	color: var(--fg-color);
+	overflow: auto;
+	z-index: 4000;
+	transition: var(--sub-transition);
+}
+
+.guide.hide {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.guide h1 {
+	position: relative;
+	margin-bottom: 30px;
+	color: var(--main-color);
+}
+
+.guide h1::after {
+	content: '';
+	position: absolute;
+	bottom: -15px;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background-color: var(--fg-color);
+	opacity: .2;
+}
+
+.guide h3 {
+	margin-bottom: 15px;
+	font-weight: 500;
+}
+
+.guide .what {margin-bottom: 20px;}
+
+.guide .how {margin-bottom: 40px; height: 39vh; overflow: auto;}
+
+.guide p {
+	font-weight: 200;
+	line-height: 2;
+	font-size: 14px;
+}
+
+.guide .guide-text {
+	padding-left: 20px;
+	margin-bottom: 20px;
+}
+
+.guide .guide-text h4 {
+	margin-bottom: 10px;
+	font-weight: 400;
+}
+
+.guide .guide-text p {
+	line-height: 2.5;
+}
+
+.guide .guide-text i,
+.guide .guide-text .key {
+	padding: 4px 8px;
+	margin: 0 5px;
+	border: 1px solid #6a6f73a1;
+	background: #423e3e4d;
+	color: #fff;
+	border-radius: 3px;
+}
+
+.guide .close-guid {
+	margin-bottom: 50px;
+	text-align: right;
+}
+
+.guide .close-guid button {
+	all: unset;
+	width: 100px;
+	height: 30px;
+	line-height: 26px;
+	margin: 0 15px;
+	border: 1px solid #6a6f73a1;
+	background: #423e3e4d;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 14px;
+	transition: var(--sub-transition);
+}
+
+.guide .close-guid button:hover,
+.guide .close-guid button:focus {
+	background-color: var(--main-color);
+}
+
+@media (max-width: 500px) {
+	.guide {padding: 20px 20px;}
+
+	.guide .guide-text {padding-left: 0;}
+
+	.guide .guide-text p {line-height: 1.8;}
+}
+
+/* End Guide */
+/* Start Slider */
+
+.slider {
+	position: relative;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	overflow: hidden;
+}
+
+/* End Slider */
+/* Start Slider Imgs */
+
+.s-imgs {width: 100vw;height: 100%;}
+
+.s-imgs.slide {display: flex;}
+
+.s-imgs img {
+	width: 100%;
+	height: 100vh;
+	display: block;
+	object-fit: cover;
+	transition: var(--main-transition);
+}
+
+.s-imgs.fade img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+}
+
+.s-imgs.slide img {position: static;}
+
+.s-imgs.fade img.active {opacity: 1;}
+
+/* End Slider Imgs */
+/* Start Slider Settings */
+
+.s-settings {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	min-height: 100vh;
+	background-color: var(--bg-color);
+	padding: 30px 50px;
+	z-index: 3000;
+	opacity: 0;
+	visibility: hidden;
+	transition: var(--sub-transition);
+}
+
+.s-settings.show {opacity: 1;visibility: visible;}
+
+.s-settings header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	margin-bottom: 15px;
+}
+
+.s-settings header::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	margin-top: 20px;
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+.s-settings header h2 {
+	font-weight: 400;
+	color: var(--fg-color);
+	transition: var(--sub-transition);
+}
+
+.s-settings header button {
+	all: unset;
+	width: 100px;
+	height: 30px;
+	line-height: 26px;
+	margin: 0 15px;
+	border: 1px solid #6a6f73a1;
+	background: #423e3e4d;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 14px;
+	transition: var(--sub-transition);
+}
+
+.s-settings header button:hover,
+.s-settings header button:focus,
+.s-settings header button:last-of-type {
+	background-color: var(--main-color);
+}
+
+.s-settings .settings-cont {
+	margin-top: 20px;
+	/* padding: 0 0 60px; */ /* Not Work Becouse Smooth Scroll Is Used */
+	height: calc(100vh - 70px); /* Nake It 70 If U Remove Smothe Scroll */
+	overflow: auto;
+}
+
+.s-settings .settings-header {
+	width: 100%;
+	font-weight: 400;
+	margin: 0 0 25px;
+	color: var(--fg-color);
+	transition: var(--sub-transition);
+}
+
+.s-settings .settings-sub-header {
+	font-weight: 300;
+	width: 200px;
+	color: var(--fg-color);
+	transition: var(--sub-transition);
+}
+
+.s-settings .options {display: flex;flex-wrap: wrap;justify-content: center;}
+
+.s-settings .options:last-of-type {
+	margin-bottom: 40px; /* This Option Becouse Using Smooth Scroll */
+}
+
+.s-settings .options > div {
+	padding: 10px 20px;
+	margin: 0 15px 30px;
+	border: 1px solid #ffffff36;
+	background: #423e3e4d;
+	border-radius: 5px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.s-settings .options-choice {
+	display: flex;
+	margin: auto;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.s-settings .options-choice div {
+	position: relative;
+	width: 100px;
+	height: 30px;
+	line-height: 28px;
+	border: 1px solid #6a6f73a1;
+	color: #fff;
+	border-radius: 3px;
+	cursor: pointer;
+	text-align: center;
+	font-size: 14px;
+	transition: var(--sub-transition);
+}
+
+.s-settings .random-time-option .options-choice div {width: 50px;}
+
+.s-settings .options-choice div:not(:last-of-type) {margin-right: 15px;}
+.s-settings .options-choice div:not(:first-of-type) {margin-left: 15px;}
+
+.s-settings .colors div:not(.custome)::before {
+	content: "\f00c";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	opacity: 0;
+	transition: var(--sub-transition);
+}
+
+.s-settings .colors div.white::before,
+.s-settings .colors div.white-dark::before {filter: invert(1);}
+
+.s-settings .colors div.active::before,
+.s-settings .colors div:hover::before {opacity: 1;}
+
+.s-settings .colors .custome {
+	position: relative;
+	background-color: #6a6f73a1;
+}
+
+.s-settings .colors .custome input {
+	width: 100%;
+	height: 100%;
+	opacity: 0;
+	cursor: pointer;
+}
+
+.s-settings .colors .custome i {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.s-settings .state .active,
+.s-settings .state div:hover,
+.s-settings .state div:focus,
+.s-settings .times .active,
+.s-settings .times div:hover,
+.s-settings .times div:focus {
+	background-color: var(--main-color);
+}
+
+.s-settings .bg-color-option .black {background-color: rgba(18, 18, 18, 0.9);}
+
+.s-settings .bg-color-option .black-light {background-color: rgba(34, 34, 34, 0.815);}
+
+.s-settings .bg-color-option .grey {background-color: rgba(47, 54, 64, 0.815);}
+
+.s-settings .bg-color-option .white {background-color: rgba(245, 246, 250, 0.815);}
+
+.s-settings .bg-color-option .white-dark {background-color: rgba(219, 220, 225, 0.715);}
+
+
+.s-settings .fg-color-option .black {background-color: #121212;}
+
+.s-settings .fg-color-option .black-light {background-color: #333;}
+
+.s-settings .fg-color-option .grey {background-color: #555;}
+
+.s-settings .fg-color-option .white {background-color: #fff;}
+
+.s-settings .fg-color-option .white-dark {background-color: #ddd;}
+
+
+.s-settings .blue {background-color: #651fff;}
+
+.s-settings .blue-light {background-color: #1976d2;}
+
+.s-settings .red {background-color: #f50057;}
+
+.s-settings .orange {background-color: #ff3d00;}
+
+.s-settings .green 	{background-color: #00c853;}
+
+@media (max-width: 1127px) {
+	.s-settings {padding: 30px;}
+
+	.s-settings header h2 {font-size: 25px;}
+
+	.s-settings .settings-sub-header {padding: 15px;}
+
+	.s-settings .options > div {padding: 0;}
+
+	.s-settings .options-choice {padding-bottom: 10px; width: 100%;}
+
+	.s-settings .options-choice div {margin: 10px 10px !important;}
+
+	.s-settings .slider-options > div {width: 400px;}
+}
+
+@media (max-width: 500px) {
+	.s-settings {padding: 20px 20px;}
+
+	.s-settings header h2 {font-size: 20px;}
+
+	.s-settings .buttons button {
+		width: 75px;
+		height: 25px;
+		font-size: 12px;
+		margin: 0 10px;
+	}
+
+	.s-settings .settings-cont {padding-bottom: 20px;margin-top: 20px;}
+
+	.s-settings .settings-header {font-size: 18px;}
+
+	.s-settings .settings-sub-header {font-size: 14px;}
+
+	.s-settings .options > div {width: 100%;}
+}
+
+/* End Slider Settings */
+/* Start Slider Controls */
+
+.s-controls {
+	position: fixed;
+	bottom: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	background-color: var(--bg-color);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 10px;
+	z-index: 1000;
+	transition: var(--sub-transition);
+}
+
+.s-controls.hide {
+	transform: translateX(-50%) translateY(calc(100% + 20px));
+}
+
+.s-controls div {position: relative;transition: var(--sub-transition);}
+
+.s-controls .disabled {opacity: .4;}
+
+.s-controls.help div::before,
+.s-controls.help div::after {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 10px) scale(0.8);
+	transition: var(--sub-transition);
+	opacity: 0;
+	visibility: hidden;
+}
+
+.s-controls.help div::before {
+	top: -50px;
+	padding: 6px 15px;
+	border-radius: 10px;
+	font-size: 12px;
+	background-color: var(--main-color);
+	color: var(--white-color);
+	text-align: center;
+	box-shadow: 0 10px 10px -5px rgba(18, 18, 18, 0.5);
+}
+
+.s-controls.help div:first-child::before {content: "Settings";}
+
+.s-controls.help div:nth-child(2)::before {content: "First Photo";}
+
+.s-controls.help div:nth-child(3)::before {content: "Previous";}
+
+.s-controls.help div:nth-child(4)::before {content: "Random";}
+
+.s-controls.help div:nth-child(5)::before {content: "Next";}
+
+.s-controls.help div:nth-child(6)::before {content: "Last Photo";}
+
+.s-controls.help div:last-child::before {content: "Gallery";}
+
+.s-controls.help div:nth-child(2)::before,
+.s-controls.help div:nth-child(6)::before {width: 62px;}
+
+.s-controls.help div::after {
+	content: "";
+	top: -20px;
+	border-style: solid;
+	border-width: 10px;
+	border-color: var(--main-color) transparent transparent transparent;
+}
+
+.s-controls.help div:hover::before,
+.s-controls.help div:hover::after {
+	visibility: visible;
+	opacity: 1;
+	transform: translate(-50%, 0) scale(1);
+}
+
+.s-controls i {
+	color: var(--main-color);
+	text-shadow: 0 0 1px var(--fg-color);
+	font-size: 20px;
+	padding: 15px 30px;
+	cursor: pointer;
+	transition: var(--sub-transition);
+}
+
+.s-controls i:hover {
+	color: var(--fg-color);
+	text-shadow: 0 0 10px var(--main-color);
+}
+
+@media (max-width: 550px) {
+	.s-controls {width: 95%; bottom: 10px;}
+
+	.s-controls.hide {
+		transform: translateX(-50%) translateY(calc(100% + 50px));
+	}
+
+	.s-controls i {padding: 15px 25px;}
+
+	.s-controls #settingsBtn,
+	.s-controls #galleryBtn {
+		position: fixed;
+		bottom: 50px;
+		color: #fff;
+		width: 50px;
+		height: 50px;
+		line-height: 50px;
+		text-align: center;
+	}
+
+	.s-controls #settingsBtn {left: 0;}
+
+	.s-controls #galleryBtn {right: 0;}
+
+	.s-controls #settingsBtn i,
+	.s-controls #galleryBtn i {
+		color: #fff;
+		padding: 0;
+	}
+}
+
+/* End Slider Controls */
+/* Start Slider Choose */
+
+.gallery {
+	position: fixed !important; /* Important Becouse Using Smooth Sctollbar */
+	top: 0;
+	right: 0;
+	max-height: 100vh;
+	width: 235px;
+	padding: 0 30px;
+	background-color: var(--bg-color);
+	overflow: auto;
+	transform: translateX(100%);
+	transition: var(--sub-transition);
+	z-index: 2000;
+}
+
+.gallery.show {transform: translateX(0);}
+
+.gallery img {
+	display: block;
+	width: 100%;
+	height: 80px;
+	margin: 25px 0;
+	object-fit: cover;
+	border: 2px solid var(--main-color);
+	cursor: pointer;
+	transition: var(--main-transition);
+}
+
+.gallery img:last-of-type {
+	margin-bottom: 45px;
+}
+
+.gallery img.active,
+.gallery img:hover,
+.gallery img:focus {
+	border: 2px solid var(--fg-color);
+}
+
+/* End Slider Choose */
+
+/*
+** Idea By: Kirolos Mahfouz
+** Designed By: Kirolos Mahfouz
+** Frontend By: Kirolos Mahfouz
+*/

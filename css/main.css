@@ -12,7 +12,9 @@
 	margin: 0;
 }
 
-body {font-family: "Poppins", sans-serif;}
+body {
+	font-family: "Poppins", sans-serif;
+}
 
 :root {
 	--main-color: #1976d2;
@@ -71,14 +73,14 @@ body {font-family: "Poppins", sans-serif;}
 }
 
 .guide h1::after {
-	content: '';
+	content: "";
 	position: absolute;
 	bottom: -15px;
 	left: 0;
 	height: 2px;
 	width: 100%;
 	background-color: var(--fg-color);
-	opacity: .2;
+	opacity: 0.2;
 }
 
 .guide h3 {
@@ -86,9 +88,15 @@ body {font-family: "Poppins", sans-serif;}
 	font-weight: 500;
 }
 
-.guide .what {margin-bottom: 20px;}
+.guide .what {
+	margin-bottom: 20px;
+}
 
-.guide .how {margin-bottom: 40px; height: 39vh; overflow: auto;}
+.guide .how {
+	margin-bottom: 40px;
+	height: 39vh;
+	overflow: auto;
+}
 
 .guide p {
 	font-weight: 200;
@@ -147,11 +155,17 @@ body {font-family: "Poppins", sans-serif;}
 }
 
 @media (max-width: 500px) {
-	.guide {padding: 20px 20px;}
+	.guide {
+		padding: 20px 20px;
+	}
 
-	.guide .guide-text {padding-left: 0;}
+	.guide .guide-text {
+		padding-left: 0;
+	}
 
-	.guide .guide-text p {line-height: 1.8;}
+	.guide .guide-text p {
+		line-height: 1.8;
+	}
 }
 
 /* End Guide */
@@ -167,9 +181,14 @@ body {font-family: "Poppins", sans-serif;}
 /* End Slider */
 /* Start Slider Imgs */
 
-.s-imgs {width: 100vw;height: 100%;}
+.s-imgs {
+	width: 100vw;
+	height: 100%;
+}
 
-.s-imgs.slide {display: flex;}
+.s-imgs.slide {
+	display: flex;
+}
 
 .s-imgs img {
 	width: 100%;
@@ -186,9 +205,13 @@ body {font-family: "Poppins", sans-serif;}
 	opacity: 0;
 }
 
-.s-imgs.slide img {position: static;}
+.s-imgs.slide img {
+	position: static;
+}
 
-.s-imgs.fade img.active {opacity: 1;}
+.s-imgs.fade img.active {
+	opacity: 1;
+}
 
 /* End Slider Imgs */
 /* Start Slider Settings */
@@ -207,7 +230,10 @@ body {font-family: "Poppins", sans-serif;}
 	transition: var(--sub-transition);
 }
 
-.s-settings.show {opacity: 1;visibility: visible;}
+.s-settings.show {
+	opacity: 1;
+	visibility: visible;
+}
 
 .s-settings header {
 	display: flex;
@@ -276,7 +302,11 @@ body {font-family: "Poppins", sans-serif;}
 	transition: var(--sub-transition);
 }
 
-.s-settings .options {display: flex;flex-wrap: wrap;justify-content: center;}
+.s-settings .options {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
 
 .s-settings .options:last-of-type {
 	margin-bottom: 40px; /* This Option Becouse Using Smooth Scroll */
@@ -315,10 +345,16 @@ body {font-family: "Poppins", sans-serif;}
 	transition: var(--sub-transition);
 }
 
-.s-settings .random-time-option .options-choice div {width: 50px;}
+.s-settings .random-time-option .options-choice div {
+	width: 50px;
+}
 
-.s-settings .options-choice div:not(:last-of-type) {margin-right: 15px;}
-.s-settings .options-choice div:not(:first-of-type) {margin-left: 15px;}
+.s-settings .options-choice div:not(:last-of-type) {
+	margin-right: 15px;
+}
+.s-settings .options-choice div:not(:first-of-type) {
+	margin-left: 15px;
+}
 
 .s-settings .colors div:not(.custome)::before {
 	content: "\f00c";
@@ -333,10 +369,14 @@ body {font-family: "Poppins", sans-serif;}
 }
 
 .s-settings .colors div.white::before,
-.s-settings .colors div.white-dark::before {filter: invert(1);}
+.s-settings .colors div.white-dark::before {
+	filter: invert(1);
+}
 
 .s-settings .colors div.active::before,
-.s-settings .colors div:hover::before {opacity: 1;}
+.s-settings .colors div:hover::before {
+	opacity: 1;
+}
 
 .s-settings .colors .custome {
 	position: relative;
@@ -366,58 +406,105 @@ body {font-family: "Poppins", sans-serif;}
 	background-color: var(--main-color);
 }
 
-.s-settings .bg-color-option .black {background-color: rgba(18, 18, 18, 0.9);}
+.s-settings .bg-color-option .black {
+	background-color: rgba(18, 18, 18, 0.9);
+}
 
-.s-settings .bg-color-option .black-light {background-color: rgba(34, 34, 34, 0.815);}
+.s-settings .bg-color-option .black-light {
+	background-color: rgba(34, 34, 34, 0.815);
+}
 
-.s-settings .bg-color-option .grey {background-color: rgba(47, 54, 64, 0.815);}
+.s-settings .bg-color-option .grey {
+	background-color: rgba(47, 54, 64, 0.815);
+}
 
-.s-settings .bg-color-option .white {background-color: rgba(245, 246, 250, 0.815);}
+.s-settings .bg-color-option .white {
+	background-color: rgba(245, 246, 250, 0.815);
+}
 
-.s-settings .bg-color-option .white-dark {background-color: rgba(219, 220, 225, 0.715);}
+.s-settings .bg-color-option .white-dark {
+	background-color: rgba(219, 220, 225, 0.715);
+}
 
+.s-settings .fg-color-option .black {
+	background-color: #121212;
+}
 
-.s-settings .fg-color-option .black {background-color: #121212;}
+.s-settings .fg-color-option .black-light {
+	background-color: #333;
+}
 
-.s-settings .fg-color-option .black-light {background-color: #333;}
+.s-settings .fg-color-option .grey {
+	background-color: #555;
+}
 
-.s-settings .fg-color-option .grey {background-color: #555;}
+.s-settings .fg-color-option .white {
+	background-color: #fff;
+}
 
-.s-settings .fg-color-option .white {background-color: #fff;}
+.s-settings .fg-color-option .white-dark {
+	background-color: #ddd;
+}
 
-.s-settings .fg-color-option .white-dark {background-color: #ddd;}
+.s-settings .blue {
+	background-color: #651fff;
+}
 
+.s-settings .blue-light {
+	background-color: #1976d2;
+}
 
-.s-settings .blue {background-color: #651fff;}
+.s-settings .red {
+	background-color: #f50057;
+}
 
-.s-settings .blue-light {background-color: #1976d2;}
+.s-settings .orange {
+	background-color: #ff3d00;
+}
 
-.s-settings .red {background-color: #f50057;}
-
-.s-settings .orange {background-color: #ff3d00;}
-
-.s-settings .green 	{background-color: #00c853;}
+.s-settings .green {
+	background-color: #00c853;
+}
 
 @media (max-width: 1127px) {
-	.s-settings {padding: 30px;}
+	.s-settings {
+		padding: 30px;
+	}
 
-	.s-settings header h2 {font-size: 25px;}
+	.s-settings header h2 {
+		font-size: 25px;
+	}
 
-	.s-settings .settings-sub-header {padding: 15px;}
+	.s-settings .settings-sub-header {
+		padding: 15px;
+	}
 
-	.s-settings .options > div {padding: 0;}
+	.s-settings .options > div {
+		padding: 0;
+	}
 
-	.s-settings .options-choice {padding-bottom: 10px; width: 100%;}
+	.s-settings .options-choice {
+		padding-bottom: 10px;
+		width: 100%;
+	}
 
-	.s-settings .options-choice div {margin: 10px 10px !important;}
+	.s-settings .options-choice div {
+		margin: 10px 10px !important;
+	}
 
-	.s-settings .slider-options > div {width: 400px;}
+	.s-settings .slider-options > div {
+		width: 400px;
+	}
 }
 
 @media (max-width: 500px) {
-	.s-settings {padding: 20px 20px;}
+	.s-settings {
+		padding: 20px 20px;
+	}
 
-	.s-settings header h2 {font-size: 20px;}
+	.s-settings header h2 {
+		font-size: 20px;
+	}
 
 	.s-settings .buttons button {
 		width: 75px;
@@ -426,13 +513,22 @@ body {font-family: "Poppins", sans-serif;}
 		margin: 0 10px;
 	}
 
-	.s-settings .settings-cont {padding-bottom: 20px;margin-top: 20px;}
+	.s-settings .settings-cont {
+		padding-bottom: 20px;
+		margin-top: 20px;
+	}
 
-	.s-settings .settings-header {font-size: 18px;}
+	.s-settings .settings-header {
+		font-size: 18px;
+	}
 
-	.s-settings .settings-sub-header {font-size: 14px;}
+	.s-settings .settings-sub-header {
+		font-size: 14px;
+	}
 
-	.s-settings .options > div {width: 100%;}
+	.s-settings .options > div {
+		width: 100%;
+	}
 }
 
 /* End Slider Settings */
@@ -456,9 +552,14 @@ body {font-family: "Poppins", sans-serif;}
 	transform: translateX(-50%) translateY(calc(100% + 20px));
 }
 
-.s-controls div {position: relative;transition: var(--sub-transition);}
+.s-controls div {
+	position: relative;
+	transition: var(--sub-transition);
+}
 
-.s-controls .disabled {opacity: .4;}
+.s-controls .disabled {
+	opacity: 0.4;
+}
 
 .s-controls.help div::before,
 .s-controls.help div::after {
@@ -481,22 +582,38 @@ body {font-family: "Poppins", sans-serif;}
 	box-shadow: 0 10px 10px -5px rgba(18, 18, 18, 0.5);
 }
 
-.s-controls.help div:first-child::before {content: "Settings";}
+.s-controls.help div:first-child::before {
+	content: "Settings";
+}
 
-.s-controls.help div:nth-child(2)::before {content: "First Photo";}
+.s-controls.help div:nth-child(2)::before {
+	content: "First Photo";
+}
 
-.s-controls.help div:nth-child(3)::before {content: "Previous";}
+.s-controls.help div:nth-child(3)::before {
+	content: "Previous";
+}
 
-.s-controls.help div:nth-child(4)::before {content: "Random";}
+.s-controls.help div:nth-child(4)::before {
+	content: "Random";
+}
 
-.s-controls.help div:nth-child(5)::before {content: "Next";}
+.s-controls.help div:nth-child(5)::before {
+	content: "Next";
+}
 
-.s-controls.help div:nth-child(6)::before {content: "Last Photo";}
+.s-controls.help div:nth-child(6)::before {
+	content: "Last Photo";
+}
 
-.s-controls.help div:last-child::before {content: "Gallery";}
+.s-controls.help div:last-child::before {
+	content: "Gallery";
+}
 
 .s-controls.help div:nth-child(2)::before,
-.s-controls.help div:nth-child(6)::before {width: 62px;}
+.s-controls.help div:nth-child(6)::before {
+	width: 62px;
+}
 
 .s-controls.help div::after {
 	content: "";
@@ -528,13 +645,18 @@ body {font-family: "Poppins", sans-serif;}
 }
 
 @media (max-width: 550px) {
-	.s-controls {width: 95%; bottom: 10px;}
+	.s-controls {
+		width: 95%;
+		bottom: 10px;
+	}
 
 	.s-controls.hide {
 		transform: translateX(-50%) translateY(calc(100% + 50px));
 	}
 
-	.s-controls i {padding: 15px 25px;}
+	.s-controls i {
+		padding: 15px 25px;
+	}
 
 	.s-controls #settingsBtn,
 	.s-controls #galleryBtn {
@@ -547,9 +669,13 @@ body {font-family: "Poppins", sans-serif;}
 		text-align: center;
 	}
 
-	.s-controls #settingsBtn {left: 0;}
+	.s-controls #settingsBtn {
+		left: 0;
+	}
 
-	.s-controls #galleryBtn {right: 0;}
+	.s-controls #galleryBtn {
+		right: 0;
+	}
 
 	.s-controls #settingsBtn i,
 	.s-controls #galleryBtn i {
@@ -575,7 +701,9 @@ body {font-family: "Poppins", sans-serif;}
 	z-index: 2000;
 }
 
-.gallery.show {transform: translateX(0);}
+.gallery.show {
+	transform: translateX(0);
+}
 
 .gallery img {
 	display: block;

@@ -1,24 +1,20 @@
 /*
-** Idea By: Kirolos Mahfouz
-** Designed By: Kirolos Mahfouz
-** Frontend By: Kirolos Mahfouz
-*/
+ ** Idea By: Kirolos Mahfouz
+ ** Designed By: Kirolos Mahfouz
+ ** Frontend By: Kirolos Mahfouz
+ */
 
 // Start Global Variables
 
 let sliderImgsCont = document.querySelector(".s-imgs"),
 	galleryCont = document.querySelector(".gallery"),
-
 	sliderImgs = sliderImgsCont.querySelectorAll("img"),
 	galleryImgs = galleryCont.querySelectorAll("img"),
-
 	sliderImgsLength = sliderImgs.length,
 	galleryImgsLength = galleryImgs.length,
-
-	guideCont = document.querySelector(".guide");
-settingsCont = document.querySelector(".s-settings"),
+	guideCont = document.querySelector(".guide"),
+	settingsCont = document.querySelector(".s-settings"),
 	controlsCont = document.querySelector(".s-controls"),
-
 	currentSlide = 0;
 
 // End Global Variables
@@ -26,7 +22,7 @@ settingsCont = document.querySelector(".s-settings"),
 
 Scrollbar.init(guideCont);
 Scrollbar.init(galleryCont);
-Scrollbar.init(document.querySelector('.settings-cont'));
+Scrollbar.init(document.querySelector(".settings-cont"));
 
 // End Trigger Smooth Scroll
 // Start Local Storage [ Save Option ]
@@ -79,7 +75,9 @@ let randomTime = 5000;
 
 if (randomTimeOptionLocal !== null) {
 	randomTime = randomTimeOptionLocal;
-	activeStatus(`.random-time-option .times div[data-time="${randomTimeOptionLocal}"]`);
+	activeStatus(
+		`.random-time-option .times div[data-time="${randomTimeOptionLocal}"]`
+	);
 }
 
 // End Local Storage [ Random Images Time Option ]
@@ -95,7 +93,9 @@ if (randomOptionLocal !== null) {
 	} else {
 		disableRandomImages();
 		if (randomOptionLocal !== "false") {
-			currentSlide = galleryCont.querySelector(`img[src='${randomOptionLocal}']`).dataset.number;
+			currentSlide = galleryCont.querySelector(
+				`img[src='${randomOptionLocal}']`
+			).dataset.number;
 			activeStatus(sliderImgs[currentSlide], 2);
 			activeStatus(galleryImgs[currentSlide], 2);
 		}
@@ -126,7 +126,9 @@ let bgColorOptionLocal = localStorage.getItem("bgColorOptionLocal");
 let bgColorCustomeIcon = document.querySelector(".bg-color-option .custome i");
 
 if (bgColorOptionLocal !== null) {
-	let element = document.querySelector(`.bg-color-option .colors div[data-color="${bgColorOptionLocal}"]`);
+	let element = document.querySelector(
+		`.bg-color-option .colors div[data-color="${bgColorOptionLocal}"]`
+	);
 	if (element === null) {
 		activeStatus(`.bg-color-option .colors .custome`);
 		bgColorCustomeIcon.style.color = bgColorOptionLocal;
@@ -143,7 +145,9 @@ let fgColorOptionLocal = localStorage.getItem("fgColorOptionLocal");
 let fgColorCustomeIcon = document.querySelector(".fg-color-option .custome i");
 
 if (fgColorOptionLocal !== null) {
-	let element = document.querySelector(`.fg-color-option .colors div[data-color="${fgColorOptionLocal}"]`);
+	let element = document.querySelector(
+		`.fg-color-option .colors div[data-color="${fgColorOptionLocal}"]`
+	);
 	if (element === null) {
 		activeStatus(`.fg-color-option .colors .custome`);
 		fgColorCustomeIcon.style.color = fgColorOptionLocal;
@@ -157,17 +161,24 @@ if (fgColorOptionLocal !== null) {
 // Start Local Storage [ Main Color Option ]
 
 let mainColorOptionLocal = localStorage.getItem("mainColorOptionLocal");
-let mainColorCustomeIcon = document.querySelector(".main-color-option .custome i");
+let mainColorCustomeIcon = document.querySelector(
+	".main-color-option .custome i"
+);
 
 if (mainColorOptionLocal !== null) {
-	let element = document.querySelector(`.main-color-option .colors div[data-color="${mainColorOptionLocal}"]`);
+	let element = document.querySelector(
+		`.main-color-option .colors div[data-color="${mainColorOptionLocal}"]`
+	);
 	if (element === null) {
 		activeStatus(`.main-color-option .colors .custome`);
 		mainColorCustomeIcon.style.color = mainColorOptionLocal;
 	} else {
 		activeStatus(element, 2);
 	}
-	document.documentElement.style.setProperty("--main-color", mainColorOptionLocal);
+	document.documentElement.style.setProperty(
+		"--main-color",
+		mainColorOptionLocal
+	);
 }
 
 // End Local Storage [ Main Color Option ]
@@ -193,7 +204,7 @@ if (styleOptionLocal !== null) {
 let guidClose = document.querySelector("#close");
 guidClose.onclick = toggleGuide;
 
-sliderImgs.forEach(ele => {
+sliderImgs.forEach((ele) => {
 	ele.onclick = toggleFullView;
 });
 
@@ -238,9 +249,9 @@ window.addEventListener("keyup", (e) => {
 			toggleSettings();
 			break;
 		case 27: // Esc
-			!guideCont.classList.contains("hide") ? toggleGuide() : null
-			settingsCont.classList.contains("show") ? toggleSettings() : null
-			galleryCont.classList.contains("show") ? toggleGallery() : null
+			!guideCont.classList.contains("hide") ? toggleGuide() : null;
+			settingsCont.classList.contains("show") ? toggleSettings() : null;
+			galleryCont.classList.contains("show") ? toggleGallery() : null;
 			break;
 		case 82: // R
 			resetSettings();
@@ -304,7 +315,7 @@ function resetSettings() {
 function nextSlide() {
 	setLocalStorage("randomOptionLocal", false);
 	if (currentSlide !== sliderImgsLength - 1) {
-		currentSlide++
+		currentSlide++;
 		checkerFunction();
 		closeGallery();
 		disableRandomImages();
@@ -321,7 +332,7 @@ function nextSlide() {
 function prevSlide() {
 	setLocalStorage("randomOptionLocal", false);
 	if (currentSlide !== 0) {
-		currentSlide--
+		currentSlide--;
 		checkerFunction();
 		closeGallery();
 		disableRandomImages();
@@ -333,7 +344,7 @@ function prevSlide() {
 			disableRandomImages();
 		}
 	}
-};
+}
 
 function toggleRandom() {
 	checkerFunction();
@@ -352,7 +363,7 @@ function firstSlide() {
 	closeGallery();
 	disableRandomImages();
 	setLocalStorage("randomOptionLocal", false);
-};
+}
 
 function lastSlide() {
 	currentSlide = sliderImgsLength - 1;
@@ -360,13 +371,13 @@ function lastSlide() {
 	closeGallery();
 	disableRandomImages();
 	setLocalStorage("randomOptionLocal", false);
-};
+}
 
 function toggleGallery() {
 	if (guideCont.classList.contains("hide")) {
 		galleryCont.classList.toggle("show");
 	}
-};
+}
 
 document.addEventListener("click", () => {
 	closeGallery();
@@ -388,7 +399,11 @@ function randomImgsFunc() {
 	}, randomTime);
 }
 
-if (randomOptionLocal === null || randomOptionLocal === "true" || randomOptionLocal === "false") {
+if (
+	randomOptionLocal === null ||
+	randomOptionLocal === "true" ||
+	randomOptionLocal === "false"
+) {
 	let random = Math.floor(Math.random() * 10);
 	currentSlide = random;
 	checkerFunction();
@@ -413,19 +428,19 @@ function disableRandomImages() {
 // End Random Image
 // Start Gallery
 
-galleryImgs.forEach(ele => [
+galleryImgs.forEach((ele) => [
 	ele.addEventListener("click", (e) => {
 		currentSlide = e.target.dataset.number;
 		checkerFunction();
 		disableRandomImages();
 		setLocalStorage("randomOptionLocal", e.target.getAttribute("src"));
-	})
+	}),
 ]);
 
 // End Gallery
 // Start Active Class Status In Settings
 
-document.querySelectorAll(".options .options-choice div").forEach(ele => {
+document.querySelectorAll(".options .options-choice div").forEach((ele) => {
 	ele.addEventListener("click", (e) => {
 		activeStatus(e.target, 2);
 	});
@@ -434,17 +449,29 @@ document.querySelectorAll(".options .options-choice div").forEach(ele => {
 // End Active Class Status In Settings
 // Start Slider Colors Options
 
-let bgColorOption = settingsCont.querySelectorAll(".bg-color-option .colors div");
-let fgColorOption = settingsCont.querySelectorAll(".fg-color-option .colors div");
-let mainColorOption = settingsCont.querySelectorAll(".main-color-option .colors div");
+let bgColorOption = settingsCont.querySelectorAll(
+	".bg-color-option .colors div"
+);
+let fgColorOption = settingsCont.querySelectorAll(
+	".fg-color-option .colors div"
+);
+let mainColorOption = settingsCont.querySelectorAll(
+	".main-color-option .colors div"
+);
 
-let bgColorCustome = settingsCont.querySelectorAll(".bg-color-option .custome input");
-let fgColorCustome = settingsCont.querySelectorAll(".fg-color-option .custome input");
-let mainColorCustome = settingsCont.querySelectorAll(".main-color-option .custome input");
+let bgColorCustome = settingsCont.querySelectorAll(
+	".bg-color-option .custome input"
+);
+let fgColorCustome = settingsCont.querySelectorAll(
+	".fg-color-option .custome input"
+);
+let mainColorCustome = settingsCont.querySelectorAll(
+	".main-color-option .custome input"
+);
 
 function changeColor(element, event, target, icon, localKey) {
-	element.forEach(ele => {
-		ele.addEventListener(event, e => {
+	element.forEach((ele) => {
+		ele.addEventListener(event, (e) => {
 			if (event == "click") {
 				icon.style.color = "#fff";
 			} else {
@@ -452,27 +479,66 @@ function changeColor(element, event, target, icon, localKey) {
 				e.target.dataset.color = e.target.value;
 				icon.style.color = e.target.dataset.color;
 			}
-			document.documentElement.style.setProperty(target, e.target.dataset.color);
+			document.documentElement.style.setProperty(
+				target,
+				e.target.dataset.color
+			);
 			setLocalStorage(localKey, e.target.dataset.color);
 		});
 	});
 }
 
-changeColor(bgColorOption, "click", "--bg-color", bgColorCustomeIcon, "bgColorOptionLocal");
-changeColor(fgColorOption, "click", "--fg-color", fgColorCustomeIcon, "fgColorOptionLocal");
-changeColor(mainColorOption, "click", "--main-color", mainColorCustomeIcon, "mainColorOptionLocal");
+changeColor(
+	bgColorOption,
+	"click",
+	"--bg-color",
+	bgColorCustomeIcon,
+	"bgColorOptionLocal"
+);
+changeColor(
+	fgColorOption,
+	"click",
+	"--fg-color",
+	fgColorCustomeIcon,
+	"fgColorOptionLocal"
+);
+changeColor(
+	mainColorOption,
+	"click",
+	"--main-color",
+	mainColorCustomeIcon,
+	"mainColorOptionLocal"
+);
 
-changeColor(bgColorCustome, "input", "--bg-color", bgColorCustomeIcon, "bgColorOptionLocal");
-changeColor(fgColorCustome, "input", "--fg-color", fgColorCustomeIcon, "fgColorOptionLocal");
-changeColor(mainColorCustome, "input", "--main-color", mainColorCustomeIcon, "mainColorOptionLocal");
+changeColor(
+	bgColorCustome,
+	"input",
+	"--bg-color",
+	bgColorCustomeIcon,
+	"bgColorOptionLocal"
+);
+changeColor(
+	fgColorCustome,
+	"input",
+	"--fg-color",
+	fgColorCustomeIcon,
+	"fgColorOptionLocal"
+);
+changeColor(
+	mainColorCustome,
+	"input",
+	"--main-color",
+	mainColorCustomeIcon,
+	"mainColorOptionLocal"
+);
 
 // End Slider Colors Options
 // Start Slider Save Local Option
 
 let saveLocalOption = settingsCont.querySelectorAll(".save-option .state div");
 
-saveLocalOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+saveLocalOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("off")) {
 			localStorage.setItem("saveLocalOptionLocal", false);
 		} else {
@@ -486,8 +552,8 @@ saveLocalOption.forEach(ele => {
 
 let helpOption = settingsCont.querySelectorAll(".help-option .state div");
 
-helpOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+helpOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("off")) {
 			controlsCont.classList.remove("help");
 			setLocalStorage("helpOptionLocal", false);
@@ -503,8 +569,8 @@ helpOption.forEach(ele => {
 
 let randomOption = settingsCont.querySelectorAll(".random-option .state div");
 
-randomOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+randomOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("on")) {
 			enableRandomImages();
 			setLocalStorage("randomOptionLocal", true);
@@ -520,8 +586,8 @@ randomOption.forEach(ele => {
 
 let repeatOption = settingsCont.querySelectorAll(".repeat-option .state div");
 
-repeatOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+repeatOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("off")) {
 			sliderImgsCont.dataset.repeat = "no";
 			galleryCont.dataset.repeat = "no";
@@ -534,15 +600,17 @@ repeatOption.forEach(ele => {
 			setLocalStorage("repeatOptionLocal", true);
 		}
 	});
-})
+});
 
 // End Slider Repeat Images Option
 // Start Slider Full View Option
 
-let fullViewOption = settingsCont.querySelectorAll(".full-view-option .state div");
+let fullViewOption = settingsCont.querySelectorAll(
+	".full-view-option .state div"
+);
 
-fullViewOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+fullViewOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("off")) {
 			controlsCont.classList.remove("hide");
 			setLocalStorage("fullViewOptonLocal", false);
@@ -551,15 +619,15 @@ fullViewOption.forEach(ele => {
 			setLocalStorage("fullViewOptonLocal", true);
 		}
 	});
-})
+});
 
 // End Slider Full View Option
 // Start Slider Style Option
 
 let styleOption = settingsCont.querySelectorAll(".style-option .state div");
 
-styleOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+styleOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		if (e.target.classList.contains("fade")) {
 			sliderImgsCont.classList.remove("slide");
 			sliderImgsCont.classList.add("fade");
@@ -576,10 +644,12 @@ styleOption.forEach(ele => {
 // End Slider Style Option
 // Start Slider Random Time Option
 
-let randomTimeOption = settingsCont.querySelectorAll(".random-time-option .times");
+let randomTimeOption = settingsCont.querySelectorAll(
+	".random-time-option .times"
+);
 
-randomTimeOption.forEach(ele => {
-	ele.addEventListener("click", e => {
+randomTimeOption.forEach((ele) => {
+	ele.addEventListener("click", (e) => {
 		randomTime = e.target.dataset.time;
 		if (randomBtn.classList.contains("fa-pause")) {
 			disableRandomImages();
@@ -598,13 +668,13 @@ function checkerFunction() {
 
 	if (sliderImgsCont.classList.contains("slide")) {
 		sliderImgsCont.querySelector(".active").scrollIntoView({
-			behavior: "smooth"
+			behavior: "smooth",
 		});
 	}
 
 	if (sliderImgsCont.classList.contains("fade")) {
 		galleryImgs[currentSlide].scrollIntoView({
-			behavior: "smooth"
+			behavior: "smooth",
 		});
 	}
 
@@ -654,12 +724,12 @@ function closeGallery() {
 function activeStatus(target, type = 1) {
 	if (type === 1) {
 		target = document.querySelector(target);
-		target.parentElement.querySelectorAll(".active").forEach(ele => {
+		target.parentElement.querySelectorAll(".active").forEach((ele) => {
 			ele.classList.remove("active");
 		});
 		target.classList.add("active");
 	} else {
-		target.parentElement.querySelectorAll(".active").forEach(ele => {
+		target.parentElement.querySelectorAll(".active").forEach((ele) => {
 			ele.classList.remove("active");
 		});
 		target.classList.add("active");
@@ -667,13 +737,17 @@ function activeStatus(target, type = 1) {
 }
 
 function stopPropagationFunc(target) {
-	target.addEventListener("click", e => {
+	target.addEventListener("click", (e) => {
 		e.stopPropagation();
 	});
 }
 
 function setLocalStorage(key, value) {
-	if (document.querySelector(".slider-options .save-option .on").classList.contains("active")) {
+	if (
+		document
+			.querySelector(".slider-options .save-option .on")
+			.classList.contains("active")
+	) {
 		localStorage.setItem(key, value);
 	}
 }
@@ -681,7 +755,7 @@ function setLocalStorage(key, value) {
 // End Functions 681
 
 /*
-** Idea By: Kirolos Mahfouz
-** Designed By: Kirolos Mahfouz
-** Frontend By: Kirolos Mahfouz
-*/
+ ** Idea By: Kirolos Mahfouz
+ ** Designed By: Kirolos Mahfouz
+ ** Frontend By: Kirolos Mahfouz
+ */

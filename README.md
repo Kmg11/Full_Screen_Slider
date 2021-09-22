@@ -35,6 +35,7 @@ Full screen slider with vanilla javascript with lots of options to handle slider
 
 ### My Links
 
+- [My Portfolio](https://kmg11.github.io/My_Official_Portfolio/)
 - [Linkedin](https://www.linkedin.com/in/kirolos-mahfouz/)
 - [Github](https://github.com/Kmg11)
 - [Facebook](https://www.facebook.com/KirolosMahfouz/)
